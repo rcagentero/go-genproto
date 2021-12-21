@@ -1,0 +1,14 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "sheets",
+    srcs = ["sheets_addon_manifest.pb.go"],
+    importpath = "google.golang.org/genproto/googleapis/apps/script/type/sheets",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//googleapis/api/annotations",
+        "//googleapis/apps/script/type",
+        "@org_golang_google_protobuf//reflect/protoreflect",
+        "@org_golang_google_protobuf//runtime/protoimpl",
+    ],
+)

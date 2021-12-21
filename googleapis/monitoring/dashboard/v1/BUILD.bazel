@@ -1,0 +1,33 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "dashboard",
+    srcs = [
+        "alertchart.pb.go",
+        "common.pb.go",
+        "dashboard.pb.go",
+        "dashboards_service.pb.go",
+        "drilldowns.pb.go",
+        "layouts.pb.go",
+        "metrics.pb.go",
+        "scorecard.pb.go",
+        "service.pb.go",
+        "text.pb.go",
+        "widget.pb.go",
+        "xychart.pb.go",
+    ],
+    importpath = "google.golang.org/genproto/googleapis/monitoring/dashboard/v1",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//googleapis/api/annotations",
+        "//googleapis/api/distribution",
+        "@org_golang_google_grpc//:go_default_library",
+        "@org_golang_google_grpc//codes",
+        "@org_golang_google_grpc//status",
+        "@org_golang_google_protobuf//reflect/protoreflect",
+        "@org_golang_google_protobuf//runtime/protoimpl",
+        "@org_golang_google_protobuf//types/known/durationpb",
+        "@org_golang_google_protobuf//types/known/emptypb",
+        "@org_golang_google_protobuf//types/known/fieldmaskpb",
+    ],
+)

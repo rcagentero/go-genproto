@@ -1,0 +1,34 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "datacatalog",
+    srcs = [
+        "bigquery.pb.go",
+        "common.pb.go",
+        "data_source.pb.go",
+        "datacatalog.pb.go",
+        "gcs_fileset_spec.pb.go",
+        "policytagmanager.pb.go",
+        "policytagmanagerserialization.pb.go",
+        "schema.pb.go",
+        "search.pb.go",
+        "table_spec.pb.go",
+        "tags.pb.go",
+        "timestamps.pb.go",
+        "usage.pb.go",
+    ],
+    importpath = "google.golang.org/genproto/googleapis/cloud/datacatalog/v1",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//googleapis/api/annotations",
+        "//googleapis/iam/v1:iam",
+        "@org_golang_google_grpc//:go_default_library",
+        "@org_golang_google_grpc//codes",
+        "@org_golang_google_grpc//status",
+        "@org_golang_google_protobuf//reflect/protoreflect",
+        "@org_golang_google_protobuf//runtime/protoimpl",
+        "@org_golang_google_protobuf//types/known/emptypb",
+        "@org_golang_google_protobuf//types/known/fieldmaskpb",
+        "@org_golang_google_protobuf//types/known/timestamppb",
+    ],
+)

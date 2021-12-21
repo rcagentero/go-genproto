@@ -1,0 +1,4 @@
+bazel-bin
+bazel-go-genproto
+bazel-out
+bazel-testlogs

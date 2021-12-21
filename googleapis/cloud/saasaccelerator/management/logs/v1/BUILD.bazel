@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "logs",
+    srcs = [
+        "notification_service_payload.pb.go",
+        "saas_instance_payload.pb.go",
+    ],
+    importpath = "google.golang.org/genproto/googleapis/cloud/saasaccelerator/management/logs/v1",
+    visibility = ["//visibility:public"],
+    deps = [
+        "@org_golang_google_protobuf//reflect/protoreflect",
+        "@org_golang_google_protobuf//runtime/protoimpl",
+        "@org_golang_google_protobuf//types/known/timestamppb",
+    ],
+)

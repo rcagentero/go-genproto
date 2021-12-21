@@ -1,0 +1,26 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "v1beta1",
+    srcs = [
+        "authorization_policy.pb.go",
+        "client_tls_policy.pb.go",
+        "common.pb.go",
+        "network_security.pb.go",
+        "server_tls_policy.pb.go",
+        "tls.pb.go",
+    ],
+    importpath = "google.golang.org/genproto/googleapis/cloud/networksecurity/v1beta1",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//googleapis/api/annotations",
+        "//googleapis/longrunning",
+        "@org_golang_google_grpc//:go_default_library",
+        "@org_golang_google_grpc//codes",
+        "@org_golang_google_grpc//status",
+        "@org_golang_google_protobuf//reflect/protoreflect",
+        "@org_golang_google_protobuf//runtime/protoimpl",
+        "@org_golang_google_protobuf//types/known/fieldmaskpb",
+        "@org_golang_google_protobuf//types/known/timestamppb",
+    ],
+)

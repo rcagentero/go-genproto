@@ -1,0 +1,21 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "identitytoolkit",
+    srcs = [
+        "account_management_service.pb.go",
+        "authentication_service.pb.go",
+        "mfa_info.pb.go",
+    ],
+    importpath = "google.golang.org/genproto/googleapis/cloud/identitytoolkit/v2",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//googleapis/api/annotations",
+        "@org_golang_google_grpc//:go_default_library",
+        "@org_golang_google_grpc//codes",
+        "@org_golang_google_grpc//status",
+        "@org_golang_google_protobuf//reflect/protoreflect",
+        "@org_golang_google_protobuf//runtime/protoimpl",
+        "@org_golang_google_protobuf//types/known/timestamppb",
+    ],
+)

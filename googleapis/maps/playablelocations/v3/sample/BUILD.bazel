@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "sample",
+    srcs = ["resources.pb.go"],
+    importpath = "google.golang.org/genproto/googleapis/maps/playablelocations/v3/sample",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//googleapis/api/annotations",
+        "//googleapis/type/latlng",
+        "@org_golang_google_protobuf//reflect/protoreflect",
+        "@org_golang_google_protobuf//runtime/protoimpl",
+        "@org_golang_google_protobuf//types/known/fieldmaskpb",
+    ],
+)

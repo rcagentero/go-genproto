@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "logging",
+    srcs = ["request_log.pb.go"],
+    importpath = "google.golang.org/genproto/googleapis/appengine/logging/v1",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//googleapis/logging/type",
+        "@org_golang_google_protobuf//reflect/protoreflect",
+        "@org_golang_google_protobuf//runtime/protoimpl",
+        "@org_golang_google_protobuf//types/known/durationpb",
+        "@org_golang_google_protobuf//types/known/timestamppb",
+    ],
+)

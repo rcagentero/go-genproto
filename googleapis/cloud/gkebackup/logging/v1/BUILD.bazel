@@ -1,0 +1,21 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "logging",
+    srcs = [
+        "logged_backup.pb.go",
+        "logged_backup_plan.pb.go",
+        "logged_common.pb.go",
+        "logged_restore.pb.go",
+        "logged_restore_plan.pb.go",
+        "logging.pb.go",
+    ],
+    importpath = "google.golang.org/genproto/googleapis/cloud/gkebackup/logging/v1",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//googleapis/rpc/status",
+        "@org_golang_google_protobuf//reflect/protoreflect",
+        "@org_golang_google_protobuf//runtime/protoimpl",
+        "@org_golang_google_protobuf//types/known/fieldmaskpb",
+    ],
+)

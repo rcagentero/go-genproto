@@ -1,0 +1,21 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "v1alpha",
+    srcs = [
+        "event_parameter.pb.go",
+        "json_validation.pb.go",
+        "log_entries.pb.go",
+        "product.pb.go",
+        "task_config.pb.go",
+        "value_type.pb.go",
+    ],
+    importpath = "google.golang.org/genproto/googleapis/cloud/integrations/v1alpha",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//googleapis/api/annotations",
+        "@org_golang_google_protobuf//reflect/protoreflect",
+        "@org_golang_google_protobuf//runtime/protoimpl",
+        "@org_golang_google_protobuf//types/known/timestamppb",
+    ],
+)

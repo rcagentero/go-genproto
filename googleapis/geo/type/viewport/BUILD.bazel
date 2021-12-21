@@ -1,0 +1,13 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "viewport",
+    srcs = ["viewport.pb.go"],
+    importpath = "google.golang.org/genproto/googleapis/geo/type/viewport",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//googleapis/type/latlng",
+        "@org_golang_google_protobuf//reflect/protoreflect",
+        "@org_golang_google_protobuf//runtime/protoimpl",
+    ],
+)

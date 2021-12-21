@@ -1,0 +1,13 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "logging",
+    srcs = ["prediction.pb.go"],
+    importpath = "google.golang.org/genproto/googleapis/cloud/aiplatform/logging",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//googleapis/rpc/status",
+        "@org_golang_google_protobuf//reflect/protoreflect",
+        "@org_golang_google_protobuf//runtime/protoimpl",
+    ],
+)

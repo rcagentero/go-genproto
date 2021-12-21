@@ -1,0 +1,14 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "logging",
+    srcs = ["logs.pb.go"],
+    importpath = "google.golang.org/genproto/googleapis/cloud/video/livestream/logging/v1",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//googleapis/cloud/video/livestream/v1:livestream",
+        "//googleapis/rpc/status",
+        "@org_golang_google_protobuf//reflect/protoreflect",
+        "@org_golang_google_protobuf//runtime/protoimpl",
+    ],
+)

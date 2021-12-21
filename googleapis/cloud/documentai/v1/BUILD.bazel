@@ -1,0 +1,31 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "documentai",
+    srcs = [
+        "document.pb.go",
+        "document_io.pb.go",
+        "document_processor_service.pb.go",
+        "geometry.pb.go",
+        "operation_metadata.pb.go",
+    ],
+    importpath = "google.golang.org/genproto/googleapis/cloud/documentai/v1",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//googleapis/api/annotations",
+        "//googleapis/longrunning",
+        "//googleapis/rpc/status",
+        "//googleapis/type/color",
+        "//googleapis/type/date",
+        "//googleapis/type/datetime",
+        "//googleapis/type/money",
+        "//googleapis/type/postaladdress",
+        "@org_golang_google_grpc//:go_default_library",
+        "@org_golang_google_grpc//codes",
+        "@org_golang_google_grpc//status",
+        "@org_golang_google_protobuf//reflect/protoreflect",
+        "@org_golang_google_protobuf//runtime/protoimpl",
+        "@org_golang_google_protobuf//types/known/fieldmaskpb",
+        "@org_golang_google_protobuf//types/known/timestamppb",
+    ],
+)
